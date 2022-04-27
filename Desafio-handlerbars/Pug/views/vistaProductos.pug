@@ -1,0 +1,16 @@
+extends default  
+
+block content 
+    if productos.length > 0
+        ul
+        each val in productos
+            
+            li= val.title
+            li= val.price
+            img(width="50" src=val.thumbnail alt="Imagen no disponible")
+    else
+        .message 
+            h2 No hay productos disponibles
+
+    a(href="/") 
+        button Agregar
