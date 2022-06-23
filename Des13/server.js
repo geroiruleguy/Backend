@@ -1,4 +1,5 @@
 import express from 'express'
+import 'dotenv/config'
 
 import { sessionHandler as session } from './middlewares/session.js'
 import { passportMiddleware, passportSessionHandler } from './middlewares/passport.js'
@@ -6,6 +7,8 @@ import { passportMiddleware, passportSessionHandler } from './middlewares/passpo
 import { usuariosRouter } from './routers/usuariosRouter.js'
 import { authRouter } from './routers/authRouter.js'
 import { datosRouter } from './routers/datosRouter.js'
+import { infoRouter } from './routers/infoRouter.js'
+import { randomsRouter } from './routers/randomsRouter.js'
 
 
 const app = express()
@@ -23,6 +26,8 @@ app.use(passportSessionHandler)
 app.use('/api/usuarios', usuariosRouter)
 app.use('/auth', authRouter)
 app.use('/api/datos', datosRouter)
+app.use('/info', infoRouter)
+app.use('/api/randoms', randomsRouter)
 
 
 // puerto
