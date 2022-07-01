@@ -8,7 +8,7 @@ import { usuariosRouter } from './routers/usuariosRouter.js'
 import { authRouter } from './routers/authRouter.js'
 import { datosRouter } from './routers/datosRouter.js'
 import { infoRouter } from './routers/infoRouter.js'
-import { childRouter } from '../Desafio14/routers/childRouter.js'
+import { childRouter } from './routers/childRouter.js'
 
 
 const app = express()
@@ -26,8 +26,7 @@ app.use(passportSessionHandler)
 app.use('/api/usuarios', usuariosRouter)
 app.use('/auth', authRouter)
 app.use('/api/datos', datosRouter)
-app.use('/info', infoRouter)
-app.use('/api/randoms', randomsRouter)
+app.use('/info', infoRouter, childRouter)
 
 
 
