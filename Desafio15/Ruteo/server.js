@@ -2,15 +2,15 @@
 import express from 'express'
 import 'dotenv/config'
 import compression from 'compression'
-import fork from 'child_process'
+// import fork from 'child_process'
 
-import { sessionHandler as session } from './middlewares/session.js'
-import { passportMiddleware, passportSessionHandler } from './middlewares/passport.js'
+import { sessionHandler as session } from '../middlewares/session.js'
+import { passportMiddleware, passportSessionHandler } from '../middlewares/passport.js'
 
 //routers
 import { usuariosRouter } from './routers/usuariosRouter.js'
-import { authRouter } from './routers/authRouter.js'
-import { datosRouter } from './routers/datosRouter.js'
+import { authRouter } from './routers/authRouter.js.js'
+import { datosRouter } from './routers/datosRouter.js.js'
 import { infoRouter } from './routers/infoRouter.js'
 import { childRouter } from './routers/childRouter.js'
 
